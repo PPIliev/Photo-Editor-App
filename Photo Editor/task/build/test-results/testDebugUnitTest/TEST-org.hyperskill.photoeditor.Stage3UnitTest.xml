@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage3UnitTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-08-10T16:18:13" hostname="DESKTOP-K0OMGKK" time="5.94">
+  <properties/>
+  <testcase name="test01_checkButtonSave" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="0.206"/>
+  <testcase name="test02_checkPermissionWasAsked" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="0.317"/>
+  <testcase name="test03_checkBitmapIsSaved" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="5.054"/>
+  <testcase name="test04_checkBitmapIsSavedAfterPermissionIsGranted" classname="org.hyperskill.photoeditor.Stage3UnitTest" time="0.363"/>
+  <system-out><![CDATA[Called loadFromPath(/system/framework/framework-res.apk, true); mode=binary sdk=29
+resources.arsc in APK 'C:\Users\Owner\.m2\repository\org\robolectric\android-all-instrumented\10-robolectric-5803371-i3\android-all-instrumented-10-robolectric-5803371-i3.jar' is compressed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

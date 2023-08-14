@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage6UnitTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-08-10T16:18:26" hostname="DESKTOP-K0OMGKK" time="9.947">
+  <properties/>
+  <testcase name="test01_checkHighBrightnessValue" classname="org.hyperskill.photoeditor.Stage6UnitTest" time="1.383"/>
+  <testcase name="test02_checkSomeContrastValue" classname="org.hyperskill.photoeditor.Stage6UnitTest" time="1.373"/>
+  <testcase name="test03_checkSomeSaturationValue" classname="org.hyperskill.photoeditor.Stage6UnitTest" time="1.472"/>
+  <testcase name="test04_checkSomeGammaValue" classname="org.hyperskill.photoeditor.Stage6UnitTest" time="1.391"/>
+  <testcase name="test05_checkDefaultBitmapEdit" classname="org.hyperskill.photoeditor.Stage6UnitTest" time="1.377"/>
+  <testcase name="test06_checkDefaultBitmapEdit2" classname="org.hyperskill.photoeditor.Stage6UnitTest" time="1.473"/>
+  <testcase name="test07_checkDefaultBitmapEditWiderSample" classname="org.hyperskill.photoeditor.Stage6UnitTest" time="1.477"/>
+  <system-out><![CDATA[onSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#81
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#86
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#91
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-7 @coroutine#96
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#101
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#102
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-8 @coroutine#106
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#107
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#109
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#115
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-8 @coroutine#116
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#120
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#121
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#127
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#128
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#131
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-5 @coroutine#135
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="D:\AndroidStudioProjects\Photo Editor\Photo Editor\task"
+    name=":Photo_Editor-task"
+    type="APP"
+    maven="Photo Editor:Photo_Editor-task:"
+    gradle="7.0.2"
+    buildFolder="build"
+    bootClassPath="C:\Users\Owner\AppData\Local\Android\Sdk\platforms\android-31\android.jar;C:\Users\Owner\AppData\Local\Android\Sdk\build-tools\30.0.2\core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-31"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Photo_Editor.iml" filepath="$PROJECT_DIR$/.idea/modules/Photo_Editor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Photo Editor/task/Photo_Editor.Photo_Editor-task.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Photo_Editor.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Photo_Editor.util.iml" />
+    </modules>
+  </component>
+</project>

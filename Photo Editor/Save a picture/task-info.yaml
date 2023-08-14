@@ -1,0 +1,1170 @@
+type: edu
+files:
+- name: src/main/java/org/hyperskill/photoeditor/MainActivity.kt
+  visible: true
+  text: |-
+    package org.hyperskill.photoeditor
+
+    import android.app.Activity
+    import android.content.Intent
+    import android.graphics.Bitmap
+    import android.graphics.Color
+    import android.os.Bundle
+    import android.provider.MediaStore
+    import android.view.View
+    import android.widget.Button
+    import android.widget.ImageView
+    import androidx.activity.result.ActivityResult
+    import androidx.activity.result.ActivityResultLauncher
+    import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
+    import androidx.appcompat.app.AppCompatActivity
+
+
+    class MainActivity : AppCompatActivity() {
+
+        private lateinit var currentImage: ImageView
+        private lateinit var b_gallery: Button
+
+
+        private val activityResultLauncher =
+            registerForActivityResult(StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val photoUri = result.data?.data ?: return@registerForActivityResult
+                    currentImage.setImageURI(photoUri)
+                }
+            }
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+            bindViews()
+
+            //do not change this line
+            currentImage.setImageBitmap(createBitmap())
+
+            b_gallery.setOnClickListener {
+                val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                activityResultLauncher.launch(galleryIntent)
+            }
+        }
+
+        private fun bindViews() {
+            currentImage = findViewById(R.id.ivPhoto)
+            b_gallery = findViewById(R.id.btnGallery)
+        }
+
+        // do not change this function
+        fun createBitmap(): Bitmap {
+            val width = 200
+            val height = 100
+            val pixels = IntArray(width * height)
+            // get pixel array from source
+
+            var R: Int
+            var G: Int
+            var B: Int
+            var index: Int
+
+            for (y in 0 until height) {
+                for (x in 0 until width) {
+                    // get current index in 2D-matrix
+                    index = y * width + x
+                    // get color
+                    R = x % 100 + 40
+                    G = y % 100 + 80
+                    B = (x+y) % 100 + 120
+
+                    pixels[index] = Color.rgb(R,G,B)
+
+                }
+            }
+            // output bitmap
+            val bitmapOut = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+            bitmapOut.setPixels(pixels, 0, width, 0, 0, width, height)
+            return bitmapOut
+        }
+    }
+  learner_created: false
+- name: src/main/res/drawable/ic_launcher_background.xml
+  visible: true
+  text: |
+    <?xml version="1.0" encoding="utf-8"?>
+    <vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="108dp"
+        android:height="108dp"
+        android:viewportWidth="108"
+        android:viewportHeight="108">
+        <path
+            android:fillColor="#008577"
+            android:pathData="M0,0h108v108h-108z" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M9,0L9,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M19,0L19,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M29,0L29,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M39,0L39,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M49,0L49,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M59,0L59,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M69,0L69,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M79,0L79,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M89,0L89,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M99,0L99,108"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,9L108,9"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,19L108,19"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,29L108,29"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,39L108,39"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,49L108,49"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,59L108,59"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,69L108,69"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,79L108,79"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,89L108,89"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M0,99L108,99"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M19,29L89,29"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M19,39L89,39"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M19,49L89,49"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M19,59L89,59"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M19,69L89,69"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M19,79L89,79"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M29,19L29,89"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M39,19L39,89"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M49,19L49,89"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M59,19L59,89"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M69,19L69,89"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M79,19L79,89"
+            android:strokeWidth="0.8"
+            android:strokeColor="#33FFFFFF" />
+    </vector>
+  learner_created: false
+- name: src/main/res/drawable-v24/ic_launcher_foreground.xml
+  visible: true
+  text: |
+    <vector xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:aapt="http://schemas.android.com/aapt"
+        android:width="108dp"
+        android:height="108dp"
+        android:viewportWidth="108"
+        android:viewportHeight="108">
+        <path
+            android:fillType="evenOdd"
+            android:pathData="M32,64C32,64 38.39,52.99 44.13,50.95C51.37,48.37 70.14,49.57 70.14,49.57L108.26,87.69L108,109.01L75.97,107.97L32,64Z"
+            android:strokeWidth="1"
+            android:strokeColor="#00000000">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:endX="78.5885"
+                    android:endY="90.9159"
+                    android:startX="48.7653"
+                    android:startY="61.0927"
+                    android:type="linear">
+                    <item
+                        android:color="#44000000"
+                        android:offset="0.0" />
+                    <item
+                        android:color="#00000000"
+                        android:offset="1.0" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:fillColor="#FFFFFF"
+            android:fillType="nonZero"
+            android:pathData="M66.94,46.02L66.94,46.02C72.44,50.07 76,56.61 76,64L32,64C32,56.61 35.56,50.11 40.98,46.06L36.18,41.19C35.45,40.45 35.45,39.3 36.18,38.56C36.91,37.81 38.05,37.81 38.78,38.56L44.25,44.05C47.18,42.57 50.48,41.71 54,41.71C57.48,41.71 60.78,42.57 63.68,44.05L69.11,38.56C69.84,37.81 70.98,37.81 71.71,38.56C72.44,39.3 72.44,40.45 71.71,41.19L66.94,46.02ZM62.94,56.92C64.08,56.92 65,56.01 65,54.88C65,53.76 64.08,52.85 62.94,52.85C61.8,52.85 60.88,53.76 60.88,54.88C60.88,56.01 61.8,56.92 62.94,56.92ZM45.06,56.92C46.2,56.92 47.13,56.01 47.13,54.88C47.13,53.76 46.2,52.85 45.06,52.85C43.92,52.85 43,53.76 43,54.88C43,56.01 43.92,56.92 45.06,56.92Z"
+            android:strokeWidth="1"
+            android:strokeColor="#00000000" />
+    </vector>
+  learner_created: false
+- name: src/main/res/layout/activity_main.xml
+  visible: true
+  text: |-
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"/>
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPhoto" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  learner_created: false
+- name: src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+  visible: true
+  text: |-
+    <?xml version="1.0" encoding="utf-8"?>
+    <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+        <background android:drawable="@drawable/ic_launcher_background" />
+        <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    </adaptive-icon>
+  learner_created: false
+- name: src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+  visible: true
+  text: |-
+    <?xml version="1.0" encoding="utf-8"?>
+    <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+        <background android:drawable="@drawable/ic_launcher_background" />
+        <foreground android:drawable="@drawable/ic_launcher_foreground" />
+    </adaptive-icon>
+  learner_created: false
+- name: src/main/res/values/colors.xml
+  visible: true
+  text: |
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <color name="colorPrimary">#008577</color>
+        <color name="colorPrimaryDark">#00574B</color>
+        <color name="colorAccent">#D81B60</color>
+    </resources>
+  learner_created: false
+- name: src/main/res/values/strings.xml
+  visible: true
+  text: |
+    <resources>
+        <string name="app_name">Photo Editor</string>
+    </resources>
+  learner_created: false
+- name: src/main/res/values/styles.xml
+  visible: true
+  text: |
+    <resources>
+
+        <!-- Base application theme. -->
+        <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+            <!-- Customize your theme here. -->
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+        </style>
+
+    </resources>
+  learner_created: false
+- name: src/main/AndroidManifest.xml
+  visible: true
+  text: |-
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="org.hyperskill.photoeditor">
+
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+        <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+            <activity android:name=".MainActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+        </application>
+
+    </manifest>
+  learner_created: false
+- name: build.gradle
+  visible: true
+  text: |-
+    apply plugin: 'com.android.application'
+    apply plugin: 'kotlin-android'
+
+    android {
+      compileSdkVersion hs.android.compileSdkVersion
+
+      defaultConfig {
+
+        applicationId "org.hyperskill.photoeditor"
+        minSdkVersion hs.android.minSdkVersion
+        targetSdkVersion hs.android.targetSdkVersion
+        versionCode 1
+        versionName '1.0'
+      }
+
+      buildFeatures {
+        viewBinding true
+      }
+
+      compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+      }
+      kotlinOptions {
+        jvmTarget = '11'
+      }
+
+    }
+    java {
+      toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+      }
+    }
+    //project(':util') {
+      dependencies {
+        def kotlinVersion = hs.android.kotlinVersion
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+
+        def coreKtx = hs.android.lib.coreKtx
+        implementation "androidx.core:core-ktx:$coreKtx"
+
+        def appCompat = hs.android.lib.appCompat
+        implementation "androidx.appcompat:appcompat:$appCompat"
+
+        def constraintLayout = hs.android.lib.constraintLayout
+        implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+
+        def material = hs.android.lib.material
+        implementation "com.google.android.material:material:$material"
+
+        testImplementation 'com.github.hyperskill:hs-test:master-SNAPSHOT'
+
+      }
+    //}
+  learner_created: false
+- name: src/test/java/org/hyperskill/photoeditor/internals/AbstractUnitTest.kt
+  visible: false
+  text: |-
+    package org.hyperskill.photoeditor.internals
+
+    import android.app.Activity
+    import android.app.AlertDialog
+    import android.content.Intent
+    import android.os.Bundle
+    import android.view.View
+    import org.junit.Assert.*
+    import org.robolectric.Robolectric
+    import org.robolectric.Shadows.shadowOf
+    import org.robolectric.android.controller.ActivityController
+    import org.robolectric.shadow.api.Shadow
+    import org.robolectric.shadows.ShadowActivity
+    import org.robolectric.shadows.ShadowAlertDialog
+    import org.robolectric.shadows.ShadowLooper
+    import org.robolectric.shadows.ShadowToast
+    import java.time.Duration
+
+    abstract class AbstractUnitTest<T : Activity>(clazz: Class<T>) {
+
+        /**
+         * Setup and control activities and their lifecycle
+         */
+        val activityController: ActivityController<T> by lazy {
+            Robolectric.buildActivity(clazz)
+        }
+
+        /**
+         * The activity being tested.
+         *
+         * It is the @RealObject of the shadowActivity
+         */
+        val activity : Activity by lazy {
+            activityController.get()
+        }
+
+        /**
+         * A Roboletric shadow object of the Activity class, contains helper methods to deal with
+         * testing activities like setting permissions, peeking results of launched activities for result,
+         * retrieving shown dialogs, intents and others.
+         *
+         * If you don't know what shadows are you can have a better understanding on that reading this
+         * on roboletric documentation: http://robolectric.org/extending/
+         *
+         * Understanding Shadows is fundamental for Roboletric, things are not what they appear to be on
+         * Roboletric because running a code on the jvm is not the same as running the code on a real/emulated device.
+         * Code that expects to eventually talk to the machine won't have the machine they expect to have to talk to.
+         * Shadow is how Roboletric makes things possible, they impersonate @RealObject and act when @RealObject is expected to act.
+         *
+         * Things in Roboletric are not what they appear to be.
+         * It is possible to not notice it for the most part, but it will be essential for some other parts
+         */
+        val shadowActivity: ShadowActivity by lazy {
+            Shadow.extract(activity)
+        }
+
+        /**
+         * A Roboletric shadow object of the mainLooper. Handles enqueued runnables and also the passage of time.
+         *
+         * Usually used with .idleFor(someDurationValue) or .runToEndOfTasks()
+         */
+        val shadowLooper: ShadowLooper by lazy {
+            shadowOf(activity.mainLooper)
+        }
+
+        /**
+         * Use this method to setup robolectric tests.
+         *
+         * Will also ensure, for assertions made inside testCodeBlock, better error messages
+         * to be displayed when tests are run with check button and exceptions are thrown by user
+         * implementation. Avoid making assertions outside testCodeBlock although they will work as
+         * expected after the block.
+         * Before testCodeBlock robolectric won't be setup so it won't work as expected.
+         *
+         * Returns a value for convenience use, like in tests that involve navigation between Activities
+         */
+        fun <ReturnValue> testActivity(arguments: Intent = Intent(), savedInstanceState: Bundle = Bundle(), testCodeBlock: (Activity) -> ReturnValue): ReturnValue {
+            try {
+                activity.intent =  arguments
+                activityController.setup(savedInstanceState)
+            } catch (ex: Exception) {
+                throw AssertionError("Exception, test failed on activity creation with $ex\n${ex.stackTraceToString()}")
+            }
+
+            return try {
+                testCodeBlock(activity)
+            } catch (ex: Exception) {
+                throw AssertionError("Exception. Test failed on activity execution with $ex\n${ex.stackTraceToString()}")
+            }
+        }
+
+        /**
+         * Use this method to find views.
+         *
+         * The view existence will be assert before being returned
+         */
+        inline fun <reified T> Activity.findViewByString(idString: String): T {
+            val id = this.resources.getIdentifier(idString, "id", this.packageName)
+            val view: View? = this.findViewById(id)
+
+            val idNotFoundMessage = "View with id \"$idString\" was not found"
+            val wrongClassMessage = "View with id \"$idString\" is not from expected class. " +
+                    "Expected ${T::class.java.simpleName} found ${view?.javaClass?.simpleName}"
+
+            assertNotNull(idNotFoundMessage, view)
+            assertTrue(wrongClassMessage, view is T)
+
+            return view as T
+        }
+
+        /**
+         * Use this method to find views.
+         *
+         * The view existence will be assert before being returned
+         */
+        inline fun <reified T> View.findViewByString(idString: String): T {
+            val id = this.resources.getIdentifier(idString, "id", context.packageName)
+            val view: View? = this.findViewById(id)
+
+            val idNotFoundMessage = "View with id \"$idString\" was not found"
+            val wrongClassMessage = "View with id \"$idString\" is not from expected class. " +
+                    "Expected ${T::class.java.simpleName} found ${view?.javaClass?.simpleName}"
+
+            assertNotNull(idNotFoundMessage, view)
+            assertTrue(wrongClassMessage, view is T)
+
+            return view as T
+        }
+
+        /**
+         * Use this method to perform clicks. It will also advance the clock millis milliseconds and run
+         * enqueued Runnable scheduled to run on main looper in that timeframe.
+         * Default value for millis is 500
+         *
+         * Internally it calls performClick() and shadowLooper.idleFor(millis)
+         */
+        fun View.clickAndRun(millis: Long = 500){
+            this.performClick()
+            shadowLooper.idleFor(Duration.ofMillis(millis))
+        }
+
+        /**
+         * Asserts that the last message toasted is the expectedMessage.
+         * Assertion fails if no toast is shown with null actualLastMessage value.
+         */
+        fun assertLastToastMessageEquals(errorMessage: String, expectedMessage: String,) {
+            val actualLastMessage: String? = ShadowToast.getTextOfLatestToast()
+            assertEquals(errorMessage, expectedMessage, actualLastMessage)
+        }
+
+        /**
+         * Use this method to retrieve the latest AlertDialog.
+         *
+         * The existence of such AlertDialog will be asserted before returning.
+         *
+         * Robolectric only supports android.app.AlertDialog, test will not be
+         * able to find androidx.appcompat.app.AlertDialog.
+         *
+         * - Important!!! :
+         * When writing stage description state explicitly the correct version that should be imported
+         */
+        fun getLatestDialog(): AlertDialog {
+            val latestAlertDialog = ShadowAlertDialog.getLatestAlertDialog()
+
+            assertNotNull(
+                "There was no AlertDialog found. Make sure to import android.app.AlertDialog version",
+                latestAlertDialog
+            )
+
+            return latestAlertDialog!!
+        }
+    }
+  learner_created: false
+- name: src/test/java/org/hyperskill/photoeditor/internals/CustomShadowBitmap.kt
+  visible: false
+  text: |-
+    package org.hyperskill.photoeditor.internals
+
+    import android.graphics.Bitmap
+    import org.robolectric.annotation.Implementation
+    import org.robolectric.annotation.Implements
+    import org.robolectric.shadows.ShadowBitmap
+    import java.io.OutputStream
+
+    // version 1.5
+    @Implements(Bitmap::class)
+    class CustomShadowBitmap : ShadowBitmap() {
+        /**
+         * These values won't be reset automatically for each @Test.
+         *
+         * Use init() for tests that use CustomShadowBitmap, if many tests use it consider calling this
+         * on a setup method annotated with @Before or equivalent annotation
+         */
+        object LastCompressed {
+            var compressedFormat : Bitmap.CompressFormat? = null
+            var compressedBitmap : Bitmap? = null
+            var compressedQuality : Int? = null
+            var compressedStream : OutputStream? = null
+
+            fun init() {
+                compressedFormat = null
+                compressedBitmap = null
+                compressedQuality = null
+                compressedStream = null
+            }
+        }
+
+        @Implementation
+        override fun compress(
+            format: Bitmap.CompressFormat?,
+            quality: Int,
+            stream: OutputStream?
+        ): Boolean {
+            LastCompressed.compressedFormat = format
+            LastCompressed.compressedBitmap = realBitmap
+            LastCompressed.compressedQuality = quality
+            LastCompressed.compressedStream = stream
+            return super.compress(format, quality, stream)
+        }
+    }
+  learner_created: false
+- name: src/test/java/org/hyperskill/photoeditor/internals/PhotoEditorUnitTest.kt
+  visible: false
+  text: |-
+    package org.hyperskill.photoeditor.internals
+
+    import android.Manifest
+    import android.app.Activity
+    import android.content.ContentResolver
+    import android.content.Context
+    import android.content.Intent
+    import android.graphics.Bitmap
+    import android.graphics.Color
+    import android.graphics.drawable.BitmapDrawable
+    import android.net.Uri
+    import android.widget.Button
+    import android.widget.ImageView
+    import com.google.android.material.slider.Slider
+    import org.hyperskill.photoeditor.R
+    import org.junit.Assert.assertEquals
+    import org.junit.Assert.assertTrue
+    import kotlin.math.abs
+
+    open class PhotoEditorUnitTest<T : Activity>(clazz: Class<T>): AbstractUnitTest<T>(clazz) {
+
+        val ivPhoto by lazy { activity.findViewByString<ImageView>("ivPhoto")
+            .also(this::assertImageIsSetToDefaultBitmap)
+        }
+
+        val btnGallery by lazy { activity.findViewByString<Button>("btnGallery")
+            .also { assertButtonName(it, "GALLERY", "btnGallery") }
+        }
+
+        val slBrightness by lazy { activity.findViewByString<Slider>("slBrightness")
+            .also { assertSliderAttributes(it, "slBrightness") }
+        }
+
+        val btnSave by lazy { activity.findViewByString<Button>("btnSave")
+            .also { assertButtonName(it, "SAVE", "btnSave") }
+        }
+
+        val slContrast by lazy { activity.findViewByString<Slider>("slContrast")
+            .also { assertSliderAttributes(it, "slContrast") }
+        }
+
+        val slSaturation by lazy { activity.findViewByString<Slider>("slSaturation")
+            .also { assertSliderAttributes(it, "slSaturation") }
+        }
+
+        val slGamma by lazy { activity.findViewByString<Slider>("slGamma")
+            .also { assertSliderAttributes(it, "slGamma",
+                0.2f, 0.2f, 4f, 1f)
+            }
+        }
+
+        fun createGalleryPickActivityResultStub(activity: Activity): Intent {
+            val resultIntent = Intent()
+            val uri = getUriToDrawable(activity, R.drawable.myexample)
+            resultIntent.data = uri
+            return resultIntent
+        }
+
+        fun getUriToDrawable(context: Context, drawableId: Int): Uri {
+            return Uri.parse(
+                ContentResolver.SCHEME_ANDROID_RESOURCE +
+                        "://" + context.resources.getResourcePackageName(drawableId)
+                        + '/' + context.resources.getResourceTypeName(drawableId)
+                        + '/' + context.resources.getResourceEntryName(drawableId)
+            )
+        }
+
+        fun singleColor(source: Bitmap, x: Int = 70, y: Int = 60): Triple<Int, Int, Int> {
+            val pixel = source.getPixel(x, y)
+
+            val red = Color.red(pixel)
+            val green = Color.green(pixel)
+            val blue = Color.blue(pixel)
+
+            return  Triple(red,green,blue)
+        }
+
+        fun assertImageIsSetToDefaultBitmap(ivPhoto: ImageView) {
+            val messageInitialImageNull = "Initial image was null, it should be set with ___.setImageBitmap(createBitmap())"
+            val messageWrongInitialImage = "Is defaultBitmap set correctly? It should be set with ___.setImageBitmap(createBitmap())"
+            val actualBitmap = (ivPhoto.drawable as BitmapDrawable?)?.bitmap ?: throw AssertionError(
+                messageInitialImageNull
+            )
+            assertTrue(messageWrongInitialImage, 200 == actualBitmap.width)
+            assertTrue(messageWrongInitialImage, 100 == actualBitmap.height)
+            val expectedRgb = Triple(110, 140, 150)
+            assertTrue(messageWrongInitialImage, expectedRgb == singleColor(actualBitmap))
+        }
+
+        fun assertButtonName(btn: Button, expectedInitialText: String, btnName: String) {
+            assertEquals("Wrong text for $btnName",
+                expectedInitialText.uppercase(), btn.text.toString().uppercase()
+            )
+        }
+
+        fun assertColorsValues(message: String, expected: Triple<Int, Int, Int>, actual: Triple<Int, Int, Int>, marginError: Int) {
+            val messageWrongValuesFormat = "%s expected: <(%d, %d, %d)> actual: <(%d, %d, %d)>"
+            val (expectedRed, expectedGreen, expectedBlue) = expected
+            val (actualRed, actualGreen, actualBlue) = actual
+
+            val messageWrongValues = messageWrongValuesFormat.format( message,
+                expectedRed, expectedGreen, expectedBlue,
+                actualRed, actualGreen, actualBlue
+            )
+
+            assertTrue(messageWrongValues, abs(expectedRed - actualRed) <= marginError)
+            assertTrue(messageWrongValues, abs(expectedGreen - actualGreen) <= marginError)
+            assertTrue(messageWrongValues, abs(expectedBlue - actualBlue) <= marginError)
+        }
+
+        fun assertSliderAttributes(
+            slider: Slider, sliderName: String, expectedStepSize: Float = 10f,
+            expectedValueFrom: Float = -250f, expectedValueTo: Float = 250f, expectedValue: Float = 0f) {
+
+            val message1 = "\"$sliderName\" should have proper stepSize attribute"
+            assertEquals(message1, expectedStepSize, slider.stepSize)
+
+            val message2 = "\"$sliderName\" should have proper valueFrom attribute"
+            assertEquals(message2, expectedValueFrom, slider.valueFrom)
+
+            val message3 = "\"$sliderName\" should have proper valueTo attribute"
+            assertEquals(message3, expectedValueTo, slider.valueTo)
+
+            val message4 = "\"$sliderName\" should have proper initial value"
+            assertEquals(message4, expectedValue, slider.value)
+        }
+
+        fun checkPermissionWasAsked () {
+
+            btnSave.clickAndRun()
+            shadowLooper.runToEndOfTasks()
+
+            val messagePermissionRequired = "Have you asked permission to write?"
+            val permissionRequest = shadowActivity.lastRequestedPermission ?: throw AssertionError(
+                messagePermissionRequired)
+
+            val hasRequestedPermission =
+                permissionRequest.requestedPermissions.any { it == Manifest.permission.WRITE_EXTERNAL_STORAGE }
+            assert(hasRequestedPermission) { messagePermissionRequired }
+
+            val actualRequestCode = permissionRequest.requestCode
+            val expectedRequestCode = 0
+            val messageWrongRequestCode =
+                "Did you use the requestCode stated on description while requiring permissions?"
+            assertEquals(messageWrongRequestCode, expectedRequestCode, actualRequestCode)
+
+        }
+    }
+  learner_created: false
+- name: src/test/java/org/hyperskill/photoeditor/Stage2UnitTest.kt
+  visible: false
+  text: |-
+    package org.hyperskill.photoeditor
+
+    import android.app.Activity
+    import android.content.Intent
+    import android.graphics.drawable.BitmapDrawable
+    import android.provider.MediaStore
+    import org.hyperskill.photoeditor.internals.PhotoEditorUnitTest
+    import org.junit.Assert.*
+    import org.junit.FixMethodOrder
+    import org.junit.Test
+    import org.junit.runner.RunWith
+    import org.junit.runners.MethodSorters
+    import org.robolectric.RobolectricTestRunner
+    import kotlin.math.max
+    import kotlin.math.min
+
+    // version 2.0.1
+    @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+    @RunWith(RobolectricTestRunner::class)
+    class Stage2UnitTest : PhotoEditorUnitTest<MainActivity>(MainActivity::class.java) {
+
+        companion object {
+            const val messageNullAfterSlBrightness = "Image was null after slBrightness triggered"
+            const val messageIntentNotFound = "No intent was found by tests. Have you launched an intent?"
+            const val messageWrongValues = "Wrong values after brightness applied."
+            const val marginError = 1
+            const val calculationWaitTime = 200L
+        }
+
+        @Test
+        fun test01_checkImageView() {
+            testActivity {
+                ivPhoto
+            }
+        }
+
+        @Test
+        fun test02_checkButtonGallery() {
+            testActivity {
+                btnGallery
+            }
+        }
+
+        @Test
+        fun test03_checkSliderBrightness() {
+            testActivity {
+                slBrightness
+            }
+        }
+
+        @Test
+        fun test04_checkSliderNotCrashing() {
+            testActivity {
+                ivPhoto
+                slBrightness.value += slBrightness.stepSize
+                slBrightness.value -= slBrightness.stepSize
+                shadowLooper.runToEndOfTasks()
+                val bitmap = (ivPhoto.drawable as BitmapDrawable?)?.bitmap
+                assertNotNull(messageNullAfterSlBrightness, bitmap)
+            }
+        }
+
+        @Test
+        fun test05_checkDefaultBitmapEdit() {
+            testActivity {
+                slBrightness
+                val initialImage =
+                    (ivPhoto.drawable as BitmapDrawable).bitmap // null checked on initialization
+                val (initialRed, initialGreen, initialBlue) = singleColor(initialImage)
+
+                val expectedRgb1 =
+                    Triple(initialRed + 110, initialGreen + 110, initialBlue + 105)
+                val expectedRgb2 =
+                    Triple(initialRed - 110, initialGreen - 120, initialBlue - 120)
+
+                slBrightness.value += slBrightness.stepSize * 5
+                slBrightness.value += slBrightness.stepSize * 6
+                shadowLooper.runToEndOfTasks()
+                Thread.sleep(calculationWaitTime)
+                shadowLooper.runToEndOfTasks()
+
+                val actualImage1 = (ivPhoto.drawable as BitmapDrawable).bitmap ?: throw AssertionError(
+                    messageNullAfterSlBrightness)
+                val actualRgb1 = singleColor(actualImage1)
+                assertColorsValues("$messageWrongValues For x=70, y=60",
+                    expectedRgb1,
+                    actualRgb1,
+                    marginError)
+
+                slBrightness.value -= slBrightness.stepSize * 10
+                slBrightness.value -= slBrightness.stepSize * 13
+                shadowLooper.runToEndOfTasks()
+                Thread.sleep(calculationWaitTime)
+                shadowLooper.runToEndOfTasks()
+
+                val actualImage2 = (ivPhoto.drawable as BitmapDrawable).bitmap ?: throw AssertionError(
+                    messageNullAfterSlBrightness)
+                val actualRgb2 = singleColor(actualImage2)
+                assertColorsValues("$messageWrongValues For x=70, y=60",
+                    expectedRgb2,
+                    actualRgb2,
+                    marginError)
+            }
+        }
+
+        @Test
+        fun test06_checkLoadedBitmapEdit() {
+            testActivity {
+                ivPhoto
+                slBrightness
+                btnGallery.clickAndRun()
+                shadowLooper.runToEndOfTasks()
+
+                val activityStubResult: Intent = createGalleryPickActivityResultStub(activity)
+                val actualIntent = shadowActivity.peekNextStartedActivityForResult()?.intent
+                    ?: throw AssertionError(messageIntentNotFound)
+
+                val expectedIntent = Intent(
+                    Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                )
+
+                assertTrue(
+                    "Intent found was different from expected." +
+                            " expected <$expectedIntent> actual <$actualIntent>",
+                    actualIntent.filterEquals(expectedIntent)
+                )
+
+                val messageNullAfterLoading = "Image was null after loading from gallery"
+                shadowActivity.receiveResult(
+                    actualIntent,
+                    Activity.RESULT_OK,
+                    activityStubResult
+                )
+                shadowLooper.runToEndOfTasks()
+
+                val initialImage =
+                    (ivPhoto.drawable as BitmapDrawable?)?.bitmap ?: throw AssertionError(
+                        messageNullAfterLoading)
+                val (initialRed, initialGreen, initialBlue) = singleColor(initialImage, 80, 90)
+                val expectedRgb = Triple(initialRed + 50, initialGreen + 50, initialBlue + 50)
+
+                slBrightness.value += slBrightness.stepSize * 3
+                slBrightness.value += slBrightness.stepSize * 2
+                shadowLooper.runToEndOfTasks()
+                Thread.sleep(calculationWaitTime)
+                shadowLooper.runToEndOfTasks()
+
+                val actualImage = (ivPhoto.drawable as BitmapDrawable).bitmap ?: throw AssertionError(
+                    messageNullAfterSlBrightness)
+                val actualRgb = singleColor(actualImage, 80, 90)
+                assertColorsValues("$messageWrongValues For x=80, y=90",
+                    expectedRgb,
+                    actualRgb,
+                    marginError)
+            }
+        }
+
+        @Test
+        fun test07_checkDefaultBitmapEditExhaustive() {
+            testActivity {
+                slBrightness
+                val initialBitmap = (ivPhoto.drawable as BitmapDrawable).bitmap // null checked on initialization
+                val initialImageImmutable = initialBitmap.copy(initialBitmap.config, false)
+
+                slBrightness.value += slBrightness.stepSize * 15
+                slBrightness.value -= slBrightness.stepSize * 4
+                shadowLooper.runToEndOfTasks()
+                Thread.sleep(calculationWaitTime)
+                shadowLooper.runToEndOfTasks()
+
+                val actualImage1 = (ivPhoto.drawable as BitmapDrawable).bitmap ?: throw AssertionError(
+                    messageNullAfterSlBrightness)
+
+                for (x in 0 until initialImageImmutable.width) {
+                    for (y in 0 until initialImageImmutable.height) {
+                        val (initialRed, initialGreen, initialBlue) = singleColor(initialImageImmutable, x, y)
+                        val expectedRed = max(0, min(initialRed + 110, 255))
+                        val expectedGreen = max(0, min(initialGreen + 110, 255))
+                        val expectedBlue = max(0, min(initialBlue + 110, 255))
+                        val expectedRgb1 = Triple(expectedRed, expectedGreen, expectedBlue)
+                        val actualRgb1 = singleColor(actualImage1, x, y)
+                        assertColorsValues("$messageWrongValues For x=$x, y=$y",
+                            expectedRgb1,
+                            actualRgb1,
+                            marginError)
+                    }
+                }
+            }
+        }
+    }
+  learner_created: false
+- name: src/test/java/org/hyperskill/photoeditor/Stage3UnitTest.kt
+  visible: false
+  text: |-
+    package org.hyperskill.photoeditor
+
+    import android.Manifest
+    import android.content.pm.PackageManager
+    import android.graphics.Bitmap
+    import android.graphics.drawable.BitmapDrawable
+    import android.net.Uri
+    import android.provider.MediaStore
+    import org.hyperskill.photoeditor.internals.CustomShadowBitmap
+    import org.hyperskill.photoeditor.internals.PhotoEditorUnitTest
+    import org.junit.Assert.assertEquals
+    import org.junit.Assert.assertTrue
+    import org.junit.FixMethodOrder
+    import org.junit.Test
+    import org.junit.runner.RunWith
+    import org.junit.runners.MethodSorters
+    import org.robolectric.RobolectricTestRunner
+    import org.robolectric.Shadows.shadowOf
+    import org.robolectric.annotation.Config
+
+    // version 2.0
+    @FixMethodOrder(MethodSorters.NAME_ASCENDING)
+    @RunWith(RobolectricTestRunner::class)
+    class Stage3UnitTest : PhotoEditorUnitTest<MainActivity>(MainActivity::class.java) {
+
+        @Test
+        fun test01_checkButtonSave() {
+            testActivity {
+                btnSave
+            }
+        }
+
+        @Test
+        fun test02_checkPermissionWasAsked () {
+            testActivity {
+                checkPermissionWasAsked()
+            }
+        }
+
+        @Test
+        @Config(shadows = [CustomShadowBitmap::class])
+        fun test03_checkBitmapIsSaved() {
+            testActivity {
+                CustomShadowBitmap.LastCompressed.init()
+                val expectedUri = Uri.parse(MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString())
+                val expectedFormat = Bitmap.CompressFormat.JPEG
+                val expectedQuality = 100
+                val expectedBitmap =
+                    (ivPhoto.drawable as BitmapDrawable).bitmap.copy(Bitmap.Config.RGB_565, false)
+                val shadowContentResolver = shadowOf(activity.contentResolver)
+
+                shadowActivity.grantPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                btnSave.clickAndRun()
+
+                val messageWrongUri = "The uri for saving the image is wrong"
+                val actualUri = shadowContentResolver.insertStatements.last().uri
+                assertEquals(messageWrongUri, expectedUri, actualUri)
+
+                val messageWrongFormat = "The image saved had wrong format"
+                val actualFormat = CustomShadowBitmap.LastCompressed.compressedFormat
+                assertEquals(messageWrongFormat, expectedFormat, actualFormat)
+
+                val messageWrongQuality = "The image saved had wrong quality"
+                val actualQuality = CustomShadowBitmap.LastCompressed.compressedQuality
+                assertEquals(messageWrongQuality, expectedQuality, actualQuality)
+
+                val messageWrongBitmap =
+                    "Image saved is not the same as the image that was displaying before the click"
+                val actualBitmap = CustomShadowBitmap.LastCompressed.compressedBitmap
+                assertTrue(messageWrongBitmap, expectedBitmap.sameAs(actualBitmap))
+            }
+        }
+
+        @Test
+        @Config(shadows = [CustomShadowBitmap::class])
+        fun test04_checkBitmapIsSavedAfterPermissionIsGranted() {
+            testActivity {
+                CustomShadowBitmap.LastCompressed.init()
+                checkPermissionWasAsked()
+
+                val expectedUri = Uri.parse(MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString())
+                val expectedFormat = Bitmap.CompressFormat.JPEG
+                val expectedQuality = 100
+                val expectedBitmap =
+                    (ivPhoto.drawable as BitmapDrawable).bitmap.copy(Bitmap.Config.RGB_565, false)
+                val shadowContentResolver = shadowOf(activity.contentResolver)
+
+                shadowActivity.grantPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                activity.onRequestPermissionsResult(
+                    0,
+                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), arrayOf(
+                        PackageManager.PERMISSION_GRANTED).toIntArray()
+                )
+                shadowLooper.runToEndOfTasks()
+
+                val messageAfterPermissionShouldSaveImage =
+                    "After the permission is granted the image should be saved without " +
+                            "requiring additional clicks"
+                val messageWrongUri = "The uri for saving the image is wrong"
+                val actualUri = shadowContentResolver.insertStatements.lastOrNull()?.uri
+                    ?: throw AssertionError(messageAfterPermissionShouldSaveImage)
+                assertEquals(messageWrongUri, expectedUri, actualUri)
+
+                val messageWrongFormat = "The image saved had wrong format"
+                val actualFormat = CustomShadowBitmap.LastCompressed.compressedFormat
+                assertEquals(messageWrongFormat, expectedFormat, actualFormat)
+
+                val messageWrongQuality = "The image saved had wrong quality"
+                val actualQuality = CustomShadowBitmap.LastCompressed.compressedQuality
+                assertEquals(messageWrongQuality, expectedQuality, actualQuality)
+
+                val messageWrongBitmap =
+                    "Bitmap saved is not the same as the bitmap that was displaying before the click"
+                val actualBitmap = CustomShadowBitmap.LastCompressed.compressedBitmap
+                assertTrue(messageWrongBitmap, expectedBitmap.sameAs(actualBitmap))
+            }
+        }
+    }
+  learner_created: false
+- name: src/main/res/drawable/myexample.jpg
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/18742#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 07 Aug 2023 18:32:02 UTC"
+record: 3

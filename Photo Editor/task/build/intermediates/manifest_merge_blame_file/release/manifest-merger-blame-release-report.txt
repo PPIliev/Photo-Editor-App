@@ -1,0 +1,55 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.hyperskill.photoeditor"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="20"
+8-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:5:5-80
+11-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:5:22-77
+12    <uses-permission
+12-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:6:5-7:38
+13        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+13-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:6:22-78
+14        android:maxSdkVersion="28" />
+14-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:7:9-35
+15
+16    <application
+16-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:10:5-24:19
+17        android:allowBackup="true"
+17-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:11:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.6.0] C:\Users\Owner\.gradle\caches\transforms-3\3e8e8ee7980c67a01ac457707215157f\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+19        android:icon="@mipmap/ic_launcher"
+19-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:12:9-43
+20        android:label="@string/app_name"
+20-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:13:9-41
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:14:9-54
+22        android:supportsRtl="true"
+22-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:15:9-35
+23        android:theme="@style/AppTheme" >
+23-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:16:9-40
+24        <activity android:name="org.hyperskill.photoeditor.MainActivity" >
+24-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:17:9-23:20
+24-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:17:19-47
+25            <intent-filter>
+25-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:18:13-22:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:19:17-69
+26-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:19:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:21:17-77
+28-->D:\AndroidStudioProjects\Photo Editor\Photo Editor\task\src\main\AndroidManifest.xml:21:27-74
+29            </intent-filter>
+30        </activity>
+31    </application>
+32
+33</manifest>

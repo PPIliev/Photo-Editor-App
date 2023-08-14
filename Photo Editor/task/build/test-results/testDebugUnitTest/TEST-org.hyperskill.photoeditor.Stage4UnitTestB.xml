@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage4UnitTestB" tests="9" skipped="6" failures="0" errors="0" timestamp="2023-08-10T16:18:19" hostname="DESKTOP-K0OMGKK" time="2.487">
+  <properties/>
+  <testcase name="test01_checkSliderContrast" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test02_checkSliderContrastNotCrashingByDefault" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="test03_checkContrastOnlyWithHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test04_checkContrastOnlyWithoutHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.82"/>
+  <testcase name="test05_checkBrightnessBeforeContrastWithHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="test06_checkBrightnessBeforeContrastWithoutHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test07_checkBrightnessBeforeContrastWiderSample" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.868"/>
+  <testcase name="test08_checkContrastBeforeBrightnessWithHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test09_checkContrastBeforeBrightnessWithoutHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.795"/>
+  <system-out><![CDATA[onSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#14
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#19
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#21
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-5 @coroutine#27
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#28
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#29
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

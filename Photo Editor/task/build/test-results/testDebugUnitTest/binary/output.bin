@@ -1,0 +1,62 @@
+TCalled loadFromPath(/system/framework/framework-res.apk, true); mode=binary sdk=29
+Àresources.arsc in APK 'C:\Users\Owner\.m2\repository\org\robolectric\android-all-instrumented\10-robolectric-5803371-i3\android-all-instrumented-10-robolectric-5803371-i3.jar' is compressed.
+conSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#2
+HonSliderChanges job updating view running on thread SDK 29 Main Thread
+conSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#7
+conSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#8
+HonSliderChanges job updating view running on thread SDK 29 Main Thread
+
+TCalled loadFromPath(/system/framework/framework-res.apk, true); mode=binary sdk=29
+
+Àresources.arsc in APK 'C:\Users\Owner\.m2\repository\org\robolectric\android-all-instrumented\10-robolectric-5803371-i3\android-all-instrumented-10-robolectric-5803371-i3.jar' is compressed.
+donSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#14
+HonSliderChanges job updating view running on thread SDK 29 Main Thread
+donSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#19
+donSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#21
+HonSliderChanges job updating view running on thread SDK 29 Main Thread
+donSliderChanges job making calculations running on thread DefaultDispatcher-worker-5 @coroutine#27
+donSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#28
+donSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#29
+HonSliderChanges job updating view running on thread SDK 29 Main Thread
+donSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#36
+HonSliderChanges job updating view running on thread SDK 29 Main Thread
+ donSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#41
+ HonSliderChanges job updating view running on thread SDK 29 Main Thread
+!donSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#46
+!donSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#47
+!donSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#52
+!donSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#53
+!HonSliderChanges job updating view running on thread SDK 29 Main Thread
+"donSliderChanges job making calculations running on thread DefaultDispatcher-worker-7 @coroutine#59
+"donSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#60
+"donSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#65
+"HonSliderChanges job updating view running on thread SDK 29 Main Thread
+#donSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#70
+#donSliderChanges job making calculations running on thread DefaultDispatcher-worker-8 @coroutine#71
+#donSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#72
+#donSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#75
+#HonSliderChanges job updating view running on thread SDK 29 Main Thread
+%$donSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#81
+%$HonSliderChanges job updating view running on thread SDK 29 Main Thread
+%&donSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#86
+%&HonSliderChanges job updating view running on thread SDK 29 Main Thread
+%'donSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#91
+%'HonSliderChanges job updating view running on thread SDK 29 Main Thread
+%(donSliderChanges job making calculations running on thread DefaultDispatcher-worker-7 @coroutine#96
+%(HonSliderChanges job updating view running on thread SDK 29 Main Thread
+%)eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#101
+%)eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#102
+%)eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-8 @coroutine#106
+%)eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#107
+%)eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#109
+%)HonSliderChanges job updating view running on thread SDK 29 Main Thread
+%*eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#115
+%*eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-8 @coroutine#116
+%*eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#120
+%*eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#121
+%*HonSliderChanges job updating view running on thread SDK 29 Main Thread
+%+eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#127
+%+eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#128
+%+eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#131
+%+eonSliderChanges job making calculations running on thread DefaultDispatcher-worker-5 @coroutine#135
+%+HonSliderChanges job updating view running on thread SDK 29 Main Thread

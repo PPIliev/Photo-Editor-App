@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage5UnitTestB" tests="11" skipped="6" failures="0" errors="0" timestamp="2023-08-10T16:18:22" hostname="DESKTOP-K0OMGKK" time="4.022">
+  <properties/>
+  <testcase name="test01_checkSliderSaturation" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test02_checkSliderGamma" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test03_checkSliderSaturationNotCrashingByDefault" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test04_checkSliderGammaNotCrashingByDefault" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test05_checkSaturationOnlyWithHints" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test06_checkSaturationOnlyWithoutHints" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.794"/>
+  <testcase name="test07_checkGammaOnlyWithHints" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test08_checkGammaOnlyWithoutHints" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.765"/>
+  <testcase name="test09_checkFiltersAppliedInOrder" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.799"/>
+  <testcase name="test10_checkFiltersAppliedInReverseOrder" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.785"/>
+  <testcase name="test11_checkFiltersAppliedInReverseOrderWiderSample" classname="org.hyperskill.photoeditor.Stage5UnitTestB" time="0.878"/>
+  <system-out><![CDATA[onSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#36
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#41
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#46
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#47
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#52
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#53
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-7 @coroutine#59
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-3 @coroutine#60
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-2 @coroutine#65
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-4 @coroutine#70
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-8 @coroutine#71
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-1 @coroutine#72
+onSliderChanges job making calculations running on thread DefaultDispatcher-worker-6 @coroutine#75
+onSliderChanges job updating view running on thread SDK 29 Main Thread
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
